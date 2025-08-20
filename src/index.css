@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../public/fonts/inter.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "fira";
+  src: url("../public/fonts/bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "firalight";
+  src: url("../public/fonts/light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+.footer_bottom {
+}
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full viewport height */
+  background-color: #020817; /* your .home background */
+}
+
+.main-content {
+  flex: 1; /* fills remaining vertical space */
+  display: grid;
+  place-items: center; /* centers content horizontally and vertically */
+  padding: 20px; /* optional padding */
+}
+
+:root {
+  --short: rgb(148, 163, 184); /* Define the color variable */
+
+  --purple: rgb(168, 85, 247);
+  --green:rgb(74, 222, 128);
+  --gold:rgb(245, 158, 11)
+
+}

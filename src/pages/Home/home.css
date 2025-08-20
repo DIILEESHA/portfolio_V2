@@ -1,0 +1,379 @@
+.home {
+  background-color: #020817;
+/* overflow: hidden; */
+}
+
+.home_grid {
+  display: grid;
+  margin: 0 50px;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  /* place-items: center; */
+  justify-content: center;
+}
+
+.ome_sub_grid {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.terminal_img {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+
+.op{
+  overflow: hidden;
+  width: 990%;
+}
+
+.command_ul {
+}
+
+.command_lis {
+  list-style: none;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 5px;
+  gap: 7px;
+  display: flex;
+  color: #fff;
+  font-family: "firalight";
+}
+.terminal_content {
+  /* padding: 10px; */
+  overflow-y: scroll;
+  background-color: #020817;
+  padding: 15px;
+  height: 190px;
+
+  /* Scrollbar width */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #4caf50 #181c23; /* Firefox: thumb and track color */
+}
+
+/* WebKit browsers */
+.terminal_content::-webkit-scrollbar {
+  width: 8px;
+  background-color: #181c23; /* Track background */
+  border-radius: 4px;
+}
+
+.terminal_content::-webkit-scrollbar-thumb {
+  background-color: #4caf50; /* Thumb color */
+  border-radius: 4px;
+  border: 2px solid #181c23; /* Space around thumb */
+}
+
+.terminal_content::-webkit-scrollbar-thumb:hover {
+  background-color: #81c784; /* Thumb hover color */
+}
+
+/* Optional scrollbar corner (bottom-right) */
+.terminal_content::-webkit-scrollbar-corner {
+  background-color: #181c23;
+}
+
+.career_roles {
+  color: var(--purple);
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.names {
+  font-size: 16px;
+  color: var(--purple);
+  font-family: "firalight";
+}
+.shorten_text {
+  color: var(--short);
+  font-family: "Inter";
+  line-height: 38px;
+  font-size: 16px;
+}
+.todo_text_section {
+  margin-top: 30px;
+}
+.todo_text {
+  font-weight: 400;
+  line-height: 30px;
+  color: var(--short);
+  font-family: "firalight";
+  font-size: 14px;
+}
+.my_name {
+  font-family: "fira";
+  color: #fff;
+  font-size: 50px;
+  line-height: 60px;
+}
+.git_link {
+  margin-top: 10px;
+  font-size: 14px;
+  font-family: "firalight";
+}
+.cb {
+  font-family: "firalight";
+  color: inherit;
+}
+.purple-text {
+  font-family: "firalight";
+  color: var(--purple);
+}
+.green {
+  font-family: "firalight";
+
+  color: var(--green);
+}
+
+.gold {
+  font-family: "firalight";
+
+  color: var(--gold);
+}
+.blur_img {
+  margin-top: -55px;
+  width: 90%;
+  object-fit: contain;
+}
+
+.terminal_box {
+  border-radius: 15px;
+  background-color: #181c23;
+  overflow: hidden;
+  position: relative;
+  /* height: 300px; */
+  border: 2px solid #1c2538;
+}
+
+.terminal_top_content {
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 7px 15px;
+  /* border: 2px solid #1c2538; */
+
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: #fff;
+}
+
+.terminal_name {
+  /* font-family: "Inter"; */
+  font-family: "firalight";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+  font-family: "Inter";
+  color: #716e6e;
+  font-size: 14px;
+  text-align: center;
+}
+
+.color_set {
+  display: flex;
+  gap: 9px;
+}
+
+.color_red,
+.color_yellow,
+.color_green {
+  /* background-color: red; */
+  width: 14px;
+  border-radius: 50%;
+  height: 14px;
+}
+
+.color_red {
+  background-color: #ff5f56;
+}
+
+.color_yellow {
+  background-color: #ffbd2e;
+}
+
+.color_green {
+  background-color: #27c93f;
+}
+/* Add to your home.css with your existing styles */
+
+/* Blinking cursor */
+.blinking_cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+/* Executed commands in green */
+.executed_command {
+  color: #4caf50; /* green */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "firalight", monospace;
+}
+
+/* Plus icon styling */
+.plus_icon {
+  color: #4caf50; /* blue */
+  font-size: 12px;
+}
+
+/* Typing line style */
+.typing_line {
+  font-family: "firalight", monospace;
+  color: #fff;
+}
+
+/* Loader dots animation */
+.loading_line {
+  font-family: "firalight", monospace;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+}
+
+.loader_dot {
+  width: 6px;
+  height: 6px;
+  margin-right: 4px;
+  background-color: #aaa;
+  border-radius: 50%;
+  display: inline-block;
+  animation: blinkDot 1.4s infinite ease-in-out both;
+}
+
+.loader_dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+.loader_dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes blinkDot {
+  0%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+/* Add to your home.css */
+
+/* Prompt dollar sign style */
+.prompt_dollar {
+  color: #39ff14; /* neon green */
+  margin-right: 6px;
+  font-family: monospace;
+  font-weight: 600;
+}
+
+/* Blinking cursor */
+.blinking_cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s step-start infinite;
+  color: #4caf50;
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+/* Executed commands in green and flex */
+.executed_command {
+  color: #4caf50;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "firalight", monospace;
+  font-size: 14px;
+}
+
+.code_line {
+  list-style: none;
+}
+
+/* Plus icon styling */
+.plus_icon {
+  color: #4caf50;
+  font-size: 14px;
+}
+
+/* Typing line style */
+.typing_line {
+  font-family: "firalight", monospace;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Loader dots animation */
+.loading_line {
+  font-family: "firalight", monospace;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.loader_dot {
+  width: 6px;
+  height: 6px;
+  margin-right: 4px;
+  background-color: #aaa;
+  border-radius: 50%;
+  display: inline-block;
+  animation: blinkDot 1.4s infinite ease-in-out both;
+}
+
+.loader_dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+.loader_dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes blinkDot {
+  0%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+}
