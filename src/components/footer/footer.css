@@ -13,6 +13,9 @@
   justify-content: space-between;
   display: flex;
 }
+
+
+
 .footer_img {
   border: 1px solid #1c2538;
   width: 50px;
@@ -37,6 +40,7 @@
 }
 
 .dan {
+  /* font-size: 35px; */
   width: 15px;
 }
 
@@ -68,3 +72,4 @@
 .hover:hover {
   color: #fff;
 }
+

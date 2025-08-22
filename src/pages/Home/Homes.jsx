@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { FaPlus } from "react-icons/fa6";
 import Layout from "../../components/Layout";
 import { motion, AnimatePresence } from "framer-motion";
-import blu from "../../assets/blurs.png"
+import blu from "../../assets/blurs.png";
 import "./home.css";
-import { div } from "framer-motion/client";
-
+import clickSound from "../../assets/click-sound.wav";
 const roles = [
   "QA Engineer",
   "WordPress Developer",
   "Front-end Developer",
-  "Freelancer",
+  "Freelance Web developer",
 ];
 
 const commandsList = [
@@ -20,7 +19,7 @@ const commandsList = [
   "npm i",
   "react@latest",
   "react-dom@latest",
-  "vite@latest",
+  "npx shadcn@latest ",
   "framer-motion@latest",
   "prettier@latest",
   "react-syntax-highlighter@latest",
@@ -57,7 +56,12 @@ const CODE_TYPING_DELAY = 50;
 
 const Homes = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const audioRef = useRef(new Audio(clickSound));
 
+  const playClickSound = () => {
+    audioRef.current.currentTime = 0;
+    audioRef.current.play();
+  };
   // Terminal states
   const [history, setHistory] = useState([]); // stores all output lines with prefix
   const [typingLine, setTypingLine] = useState("");
@@ -170,6 +174,7 @@ const Homes = () => {
     <Layout>
       <div className="home">
         <div className="home_grid">
+    
           <div className="ome_sub_grid">
             <h3 className="shorten_text">Hello, I am</h3>
             <h1 className="my_name">Dileesha Nawarathna</h1>
@@ -208,6 +213,7 @@ const Homes = () => {
                 <span className="green">githubLink = </span>{" "}
                 <span className="gold">
                   <a
+                    onClick={playClickSound}
                     href="https://github.com/DIILEESHA"
                     target="_blank"
                     className="cb"
@@ -220,11 +226,10 @@ const Homes = () => {
           </div>
 
           <div className="ome_sub_grid">
-              <div className="terminal_img">
-                <img className="op" src={blu} alt="" />
-              </div>
+            <div className="terminal_img">
+              <img className="op" src={blu} alt="" />
+            </div>
             <div className="terminal_box">
-
               <div className="terminal_top_content">
                 <div className="color_set">
                   <div className="color_red"></div>
@@ -293,35 +298,37 @@ const Homes = () => {
                       <span className="loader_dot"></span>
                       <span className="loader_dot"></span>
                       <span className="loader_dot"></span>
-                      {/* <span style={{ marginLeft: 8 }}>Installing packages, please wait...</span> */}
+                      <span style={{ marginLeft: 8 }}>
+                        Installing packages, please wait...
+                      </span>
                     </li>
                   )}
                   {/* Typing portfolio code lines with syntax highlight line by line */}
                   {typingFinalCode &&
                     finalCodeLinesTyped.map((line, i) => (
                       <li className="code_line" key={"code" + i}>
-                          <SyntaxHighlighter
-                            language="typescript"
-                            style={oneDark}
-                            customStyle={{
-                              background: "transparent",
-                              margin: 0,
-                              padding: 0,
-                              fontSize: 14,
-                            }}
-                            // showLineNumbers={true}
-                            // wrapLines
-                          >
-                            {line}
-                          </SyntaxHighlighter>
-                        </li>
+                        <SyntaxHighlighter
+                          language="typescript"
+                          style={dracula}
+                          customStyle={{
+                            background: "transparent",
+                            margin: 0,
+                            padding: 0,
+                            fontSize: 14,
+                          }}
+                          // showLineNumbers={true}
+                          // wrapLines
+                        >
+                          {line}
+                        </SyntaxHighlighter>
+                      </li>
                     ))}
                   {/* Typing line while coding */}
                   {typingFinalCode && typingLine && (
                     <li className="command_lis typing_line">
                       <SyntaxHighlighter
                         language="typescript"
-                        style={oneDark}
+                        style={dracula}
                         customStyle={{
                           background: "transparent",
                           margin: 0,

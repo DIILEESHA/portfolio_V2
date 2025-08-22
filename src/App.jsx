@@ -1,13 +1,17 @@
 import React from "react";
-import Nav from "./components/nav/Nav";
-import Layout from "./components/Layout";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homes from "./pages/Home/Homes";
+import PageLayout from "./components/PageLayout";
 
 const App = () => {
   return (
-    <div>
-      <Homes />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Homes />} />
+        <Route path="/about" element={<PageLayout />} />
+        {/* Add more routes here as needed */}
+      </Routes>
+    </Router>
   );
 };
 

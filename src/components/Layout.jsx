@@ -5,9 +5,14 @@ import Footer from "./footer/Footer";
 const Layout = ({ children }) => {
   return (
     <div className="layout">
-      <Nav />
+      <div className="naving">
+        <Nav />
+      </div>
       <main className="main-content">{children}</main>
-      <Footer />
+
+      <div className="footering">
+        <Footer />
+      </div>
     </div>
   );
 };

@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: "Inter";
+  src: url("../public/fonts/inter.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "fira";
+  src: url("../public/fonts/bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "firalight";
+  src: url("../public/fonts/light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+
+.footer_bottom {
+}
+.layout {
+  display: flex;
+  flex-direction: column;
+  background-color: #020817;
+  min-height: 100vh;
+}
+
+
+.naving {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+
+.footering {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 10;
+}
+
+
+.main-content {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding-top: 60px; /* height of Nav */
+  padding-bottom: 60px; /* height of Footer */
+  overflow-y: auto; /* enable scroll inside */
+  padding: 20px;
+}
+
+
+:root {
+  --short: rgb(148, 163, 184); /* Define the color variable */
+
+
+  --purple: rgb(168, 85, 247);
+  --green: rgb(74, 222, 128);
+  --gold: rgb(245, 158, 11);
+}
+.dad {
+  background-color: #020817;
+  border: 1px solid #1c2538;
+
+
+  position: fixed;
+  padding-top: 48px;
+}
+
+
+.boho {
+  padding-left: 5px;
+}
+.second {
+  /* padding:0px 20px; */
+}
+
+
+.app_label {
+  /* border: 1px solid #1c2538; */
+  border-radius: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgb(148, 163, 184);
+
+
+  padding-top: 10px;
+  padding-left: 20px;
+  font-family: "Inter";
+}
+
+
+.lino {
+  width: 95%;
+  background-color: #1c2538;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto 10px auto;
+  height: 1px;
+}
+
+
+.side_title {
+  /* color: rgb(148, 163, 184); */
+  color: #fff;
+  font-family: "Inter";
+  font-size: 15px;
+  cursor: pointer;
+  line-height: 20px;
+}
+
+
+.vv:hover {
+}
+.group\/sidebar-wrapper.has-data-\[variant\=inset\]\:bg-sidebar.flex.min-h-svh.w-full {
+  position: fixed;
+}

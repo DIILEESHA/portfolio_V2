@@ -1,0 +1,54 @@
+.main-contents {
+  display: flex;
+  flex: 1;
+  background-color: #10182a;
+}
+.ax {
+  display: flex;
+  margin: 90px 10px;
+  justify-content: flex-start;
+  /* overflow: hidden; */
+  width: 100%;
+}
+
+.main_sub {
+}
+.content_area {
+  position: fixed;
+  top: 48px;
+  height: 40px;
+  display: flex;
+  z-index: 1000;
+  font-family: "fira";
+  gap: 10px;
+  font-weight: 400;
+  width: 100%;
+  background-color: #10182a;
+  align-items: center;
+  color: #fff;
+  border: 1px solid #1c2538;
+}
+
+.name {
+  font-family: "firalight";
+  font-weight: 400;
+  color: #f8fafc;
+  font-size: 13px;
+}
+
+.bio_card_shown_top {
+  height: 100%;
+  border: 1px solid #1c2538;
+  margin-right: -10px;
+  position: relative;
+  padding: 0px 34px 0 17px;
+  display: flex;
+  align-items: center;
+}
+
+.rop {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  cursor: pointer;
+}

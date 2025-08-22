@@ -1,0 +1,48 @@
+.undefined_grid {
+  display: grid;
+  /* min-height: 100vh; */
+  /* overflow: scroll; */
+  grid-template-columns: 1fr 1fr;
+  /* margin: 50px; */
+  position: relative;
+}
+.lo {
+  position: relative;
+}
+.kl {
+  /* display: flex; */
+  /* justify-content: flex-end; */
+}
+
+.terminal_imgx {
+  position: fixed;
+  width: 100%;
+  /* inset: 0; */
+  /* display: flex; */
+  /* align-items: center;/ */
+  /* justify-content: center; */
+  /* top: -50px;/ */
+  /* right: 30px; */
+  bottom: 0;
+  /* right: 0; */
+  
+  opacity: 40%;
+}
+
+.oxp {
+  width: 100%;
+  /* object-fit: cover; */
+  overflow: hidden;
+  height: 100%;
+}
+
+.four_png {
+  /* width: 100px; */
+  position: relative;
+}
+.ddd {
+  font-family: "fira";
+  font-family: "fira";
+
+  /* display: none; */
+}
