@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import "./nav.css";
-import clickSound from "../../assets/click.wav"; // Put your sound file in the same folder or adjust path
+import clickSound from "../../assets/click-sound.wav"; // Put your sound file in the same folder or adjust path
 import { Link } from "react-router-dom";
 
 const Nav = () => {
@@ -8,7 +8,7 @@ const Nav = () => {
 
   const playClickSound = () => {
     audioRef.current.currentTime = 0;
-    audioRef.current.play();
+    audioRef.current.play(false);
   };
 
   return (

@@ -3,13 +3,6 @@
   flex: 1;
   background-color: #10182a;
 }
-.ax {
-  display: flex;
-  margin: 90px 10px;
-  justify-content: flex-start;
-  /* overflow: hidden; */
-  width: 100%;
-}
 
 .main_sub {
 }

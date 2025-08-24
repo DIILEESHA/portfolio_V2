@@ -10,6 +10,20 @@ import { X, MessageCircleWarning } from "lucide-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { motion } from "framer-motion";
+import Interest from "@/pages/about/Interest";
+import Education from "@/pages/about/Education";
+import Others from "@/pages/about/Others";
+import Frontend from "@/pages/about/Frontend";
+import { Braces } from "lucide-react";
+
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 const codeString = `// No tab currently open
 
@@ -21,6 +35,16 @@ console.log("⌨️ Start by clicking a file on the sidebar!");
 //  - Close this message by opening a file
 `;
 
+// Map page keys to display names for breadcrumb
+const pageNames = {
+  bio: "Bio",
+  experience: "Experience",
+  interest: "Interest",
+  education: "Education",
+  others: "Others",
+  frontend: "Frontend",
+};
+
 export default function PageLayout() {
   const [openedTabs, setOpenedTabs] = useState(["bio"]);
   const [selectedItem, setSelectedItem] = useState("bio");
@@ -28,6 +52,10 @@ export default function PageLayout() {
   const contentMap = {
     bio: <Bio />,
     experience: <Experience />,
+    interest: <Interest />,
+    education: <Education />,
+    others: <Others />,
+    frontend: <Frontend />,
   };
 
   const handleSelectItem = (item) => {
@@ -76,7 +104,6 @@ export default function PageLayout() {
                   cursor: "pointer",
                   backgroundColor:
                     selectedItem === tab ? "#020817" : "transparent",
-                  // borderRadius: "4px 4px 0 0",
                   display: "flex",
                   alignItems: "center",
                   gap: "6px",
@@ -108,67 +135,95 @@ export default function PageLayout() {
           <AppSidebar className="hhh" onSelectItem={handleSelectItem} />
         </div>
 
-        <div className="main_sub ax" style={{ position: "relative" }}>
-          {selectedItem ? (
-            contentMap[selectedItem]
-          ) : (
-            <div
-              className="mali"
-              style={{
-                position: "relative",
-                textAlign: "center",
-                // padding: "40px",
-                paddingTop: "20px",
-                color: "#ccc",
-                zIndex: 0,
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: "20px",
-              }}
-            >
-              {/* Animated warning icon */}
-              <motion.div
-                initial="initial"
-                animate="animate"
-                variants={iconAnimation}
+        <div className="ax" style={{ position: "relative" }}>
+          <div className="bread">
+            <Breadcrumb>
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink className="del" href="/">
+                    portfolio_folder
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink className="del">src</BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink className="del">pages</BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+
+                <BreadcrumbItem>
+                  <BreadcrumbLink className="del" href="/about">
+                    about
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage className="sasane del">
+                    <Braces color="#fcd34d" size={14} />
+                    {/* {pageNames[selectedItem] || "Page"} */}
+                    {selectedItem + ".json"}
+                  </BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+            <div className="linos"></div>
+          </div>
+
+          <div className="cxz">
+            {selectedItem ? (
+              contentMap[selectedItem]
+            ) : (
+              <div
+                className="mali"
                 style={{
-                  color: "orange",
+                  position: "relative",
+                  textAlign: "center",
+                  paddingTop: "20px",
+                  color: "#ccc",
+                  zIndex: 0,
                   display: "flex",
-                  justifyContent: "flex-start",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: "20px",
                 }}
               >
-                <div
+                <motion.div
+                  initial="initial"
+                  animate="animate"
+                  variants={iconAnimation}
                   style={{
-                    // display: "flex",
-                    // justifyContent: "flex-start",
-                    position: "absolute",
-                    right: "100px",
+                    color: "orange",
+                    display: "flex",
+                    justifyContent: "flex-start",
                   }}
                 >
-                  <MessageCircleWarning size={38} />
-                </div>
-              </motion.div>
+                  <div style={{ position: "absolute", right: "100px" }}>
+                    <MessageCircleWarning size={38} />
+                  </div>
+                </motion.div>
 
-              <SyntaxHighlighter
-                language="javascript"
-                style={dracula}
-                showLineNumbers
-                wrapLines
-                customStyle={{
-                  background: "transparent",
-                  borderRadius: "10px",
-                  // padding: "20px",
-                  maxWidth: "600px",
-                  margin: "70px auto",
-                  fontSize: "14px",
-                  userSelect: "text",
-                }}
-              >
-                {codeString}
-              </SyntaxHighlighter>
-            </div>
-          )}
+                <SyntaxHighlighter
+                  language="javascript"
+                  style={dracula}
+                  showLineNumbers
+                  wrapLines
+                  customStyle={{
+                    background: "transparent",
+                    borderRadius: "10px",
+                    maxWidth: "600px",
+                    margin: "70px auto",
+                    fontSize: "14px",
+                    userSelect: "text",
+                  }}
+                >
+                  {codeString}
+                </SyntaxHighlighter>
+              </div>
+            )}
+          </div>
         </div>
       </main>
 

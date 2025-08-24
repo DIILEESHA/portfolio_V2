@@ -1,6 +1,4 @@
-
 @import "tailwindcss";
-
 
 /* Custom fonts */
 @font-face {
@@ -8,6 +6,71 @@
   src: url("/fonts/inter.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+}
+@font-face {
+  font-family: "medium";
+  src: url("/fonts/medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.del {
+  font-family: "firalight";
+  font-size: 14px;
+}
+
+.bread {
+  left: 0;
+  top: 0; /* height of your fixed/sticky header */
+  padding-bottom: 10px;
+  padding: 13px 10px 0 10px;
+  color: rgb(148, 163, 184);
+  position: relative;
+  width: 100%;
+  /* background-color: #020817; */
+}
+
+
+.ax {
+  display: flex;
+  flex-direction: column;
+  position: relative; /* sticky requires positioned parent */
+  display: flex;
+  margin: 88px 15px;
+
+  justify-content: flex-start;
+  /* overflow: hidden; */
+  width: 100%;
+}
+
+.cxz{
+  margin: 10px 10px;
+
+}
+@font-face {
+  font-family: "regular";
+  src: url("/fonts/regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.dx {
+  font-family: "fira";
+  color: #fff;
+  font-size: 10px;
+  display: none;
+}
+
+.nasiya {
+  color: #f87171;
+  font-family: "medium";
+  margin-bottom: 5px;
+  padding-left: 20px;
+  margin-top: -10px;
+  font-size: 13px;
+}
+.gcx {
+  font-family: "fira";
 }
 @font-face {
   font-family: "fira";
@@ -78,9 +141,9 @@
 .dad {
   background-color: #020817;
   border: 1px solid #1c2538;
-/* width: 100; */
+  /* width: 100; */
   /* position: fixed; */
-  padding-top: 95px;
+  padding-top: 87px;
 }
 
 .boho {
@@ -98,7 +161,7 @@
   text-transform: uppercase;
   color: rgb(148, 163, 184);
 
-  padding-top: 10px;
+  padding-top: 15px;
   padding-left: 20px;
   font-family: "Inter";
 }
@@ -111,6 +174,25 @@
   justify-content: center;
   margin: 10px auto 10px auto;
   height: 1px;
+}
+
+.sasane {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.linos {
+  width: 100%;
+  background-color: #1c2538;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto 0px auto;
+  height: 1px;
+}
+
+.dmo {
+  transform: rotate(-90deg);
 }
 
 .side_title {
@@ -128,4 +210,9 @@
 
 .group\/sidebar-wrapper.has-data-\[variant\=inset\]\:bg-sidebar.flex.min-h-svh.w-full {
   /* position: relative; */
+}
+
+.haverd {
+  margin-right: 3px;
+  font-size: 14px;
 }

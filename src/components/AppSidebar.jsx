@@ -85,6 +85,8 @@ const items = [
 ];
 
 export function AppSidebar({ onSelectItem }) {
+  const [activeSubItem, setActiveSubItem] = useState(null);
+
   const [openMenus, setOpenMenus] = useState(
     items.reduce((acc, item) => {
       if (item.subItems) acc[item.title] = true;
@@ -170,47 +172,61 @@ export function AppSidebar({ onSelectItem }) {
                           <CollapsibleContent>
                             <SidebarMenuSub
                               style={{
-                                borderLeft: "0.5px solid #1c2538", // White border line
-                                marginLeft: "5px", // indent submenu after arrow
-                                paddingLeft: "16px", // space between border and items
+                                borderLeft: "0.5px solid #1c2538",
+                                marginLeft: "5px",
+                                paddingLeft: "16px",
+                                width: "100%", // fill parent width
+                                boxSizing: "border-box",
                                 display: "flex",
-                                gap: "10px",
+                                flexDirection: "column",
+                                gap: "6px",
                                 paddingTop: "6px",
                               }}
                             >
-                              {item.subItems.map((sub) => (
-                                <SidebarMenuSubItem key={sub.title}>
-                                  <a
-                                    href={sub.url}
-                                    style={{
-                                      display: "flex",
-                                      alignItems: "center",
-                                      gap: "8px",
-                                      color: sub.color || "inherit",
-                                      paddingLeft: "5px",
-                                    }}
-                                  >
-                                    {/* Render icon with color if present */}
-                                    {sub.icon && (
-                                      <sub.icon
-                                        color={sub.color || undefined}
-                                        size={16}
-                                        // style={{paddingLeft:"-6px"}}
-                                      />
-                                    )}
-                                    <h2
-                                      style={{ color: "#94a3b8" }}
-                                      className="side_title"
+                              {item.subItems.map((sub) => {
+                                const isActive = activeSubItem === sub.title;
+
+                                return (
+                                  <SidebarMenuSubItem key={sub.title}>
+                                    <a
+                                      href={sub.url}
                                       onClick={(e) => {
-                                        e.preventDefault(); // prevent page reload
+                                        e.preventDefault();
+                                        setActiveSubItem(sub.title); // mark as active
                                         handleClick(sub.title);
                                       }}
+                                      style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        gap: "8px",
+                                        color: isActive
+                                          ? "#fff"
+                                          : sub.color || "inherit",
+                                        backgroundColor: isActive
+                                          ? "transparent"
+                                          : "transparent",
+
+                                        padding: "1px",
+                                        borderRadius: "4px", // optional for rounding corners
+                                        transition:
+                                          "background-color 0.3s, box-shadow 0.3s", // smooth effect
+                                      }}
                                     >
-                                      {sub.title}
-                                    </h2>
-                                  </a>
-                                </SidebarMenuSubItem>
-                              ))}
+                                      {sub.icon && (
+                                        <sub.icon color={sub.color} size={16} />
+                                      )}
+                                      <h2
+                                        className="side_title"
+                                        style={{
+                                          color: isActive ? "#fff" : "#94a3b8",
+                                        }}
+                                      >
+                                        {sub.title}
+                                      </h2>
+                                    </a>
+                                  </SidebarMenuSubItem>
+                                );
+                              })}
                             </SidebarMenuSub>
                           </CollapsibleContent>
                         )}

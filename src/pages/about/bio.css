@@ -1,8 +1,55 @@
-.bio{
-    /* display: flex; */
-    /* justify-content: flex-start; */
-    /* justify-content: flex-start; */
-    /* position: fixed; */
-    /* overflow: hidden; */
-/* left: 0%; */
+.tem,
+.arrow_section {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #fde047;
+}
+
+.arrow_section {
+  margin: 5px 0;
+  position: relative;
+}
+
+.malisa {
+  color: #f87171;
+  font-size: 14px;
+
+  font-family: fira;
+}
+.malisas {
+  color: #fde047;
+  font-size: 14px;
+  font-family: fira;
+}
+.bio_name {
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  /* line-height: 150%; */
+  font-family: "fira";
+}
+
+.tem {
+}
+
+.dodo {
+  color: #fcd34d;
+}
+
+.dont {
+  margin-bottom: 20px;
+}
+
+.description_para {
+  font-size: 14px;
+  font-family: "regular";
+  line-height: 150%;
+  color: #fcd34d;
+  /* white-space: normal; */
+  /* display: grid; */
+  display: flex;
+  gap: 5px;
+  /* align-items: center; */
+  /* grid-template-columns: 1fr 1fr; */
 }
