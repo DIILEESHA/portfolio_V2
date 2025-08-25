@@ -8,9 +8,9 @@ import blu from "../../assets/blurs.png";
 import "./home.css";
 import clickSound from "../../assets/click-sound.wav";
 const roles = [
-  "QA Engineer",
+  "Software Quality Assuarance Engineer",
   "WordPress Developer",
-  "Front-end Developer",
+  "Front-end Engineer",
   "Freelance Web developer",
 ];
 
@@ -174,7 +174,6 @@ const Homes = () => {
     <Layout>
       <div className="home">
         <div className="home_grid">
-    
           <div className="ome_sub_grid">
             <h3 className="shorten_text">Hello, I am</h3>
             <h1 className="my_name">Dileesha Nawarathna</h1>
