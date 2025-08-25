@@ -31,6 +31,7 @@
 }
 .malx{
   font-family: "firalight";
+  font-size: 12px;
 }
 
 .ax {
@@ -170,7 +171,7 @@
   /* padding:0px 20px; */
 }
 .nedda{
-width: 15px;
+width: 10px;
 }
 .app_label {
   /* border: 1px solid #1c2538; */

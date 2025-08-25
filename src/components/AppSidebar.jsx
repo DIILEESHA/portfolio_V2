@@ -145,7 +145,7 @@ export function AppSidebar({ onSelectItem }) {
                 <div
                   style={{ cursor: "pointer" }}
                   onClick={opener} // Trigger collapse all on icon click
-                  title="Collapse All"
+                  title="Refresh Explorer"
                 >
                   <Refresh className="nedda" style={{ fill: "#94a3b8" }} />
                 </div>
@@ -153,7 +153,7 @@ export function AppSidebar({ onSelectItem }) {
                 <div
                   style={{ cursor: "pointer" }}
                   onClick={collapseAll} // Trigger collapse all on icon click
-                  title="Collapse All"
+                  title="Collapse Folders in Explorer"
                 >
                   <Colaba className="nedda" style={{ fill: "#94a3b8" }} />
                 </div>
