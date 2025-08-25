@@ -14,6 +14,22 @@
   font-style: normal;
 }
 
+.tops {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  position: sticky;
+  top: 0;
+  background: #020817; /* Note: add # for color hex */
+  /* height: 100vh; */
+  overflow: hidden;
+  z-index: 1000;
+  width: 100%;
+}
+
+.sxa {
+  height: 100%; /* or auto */
+}
 .del {
   font-family: "firalight";
   font-size: 14px;
@@ -158,6 +174,19 @@
   /* width: 100; */
   /* position: fixed; */
   padding-top: 87px;
+  padding-bottom: 90px;
+}
+
+.second {
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #10182a #020817;
+}
+.second::-webkit-scrollbar {
+  width: 8px;
+  background-color: #181c23; /* Track background */
+  border-radius: 4px;
 }
 
 .boho {
@@ -171,6 +200,10 @@
   font-weight: bold;
   font-family: "fira";
   width: 14px;
+}
+
+.nedda:hover {
+  color: #fff;
 }
 .app_label {
   /* border: 1px solid #1c2538; */

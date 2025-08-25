@@ -19,7 +19,14 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { motion } from "framer-motion";
 
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 import { aboutSidebarItems } from "./sidebarConfig";
 
@@ -61,7 +68,9 @@ export default function PageLayout() {
     setOpenedTabs(filteredTabs);
 
     if (selectedItem === tab) {
-      setSelectedItem(filteredTabs.length ? filteredTabs[filteredTabs.length - 1] : null);
+      setSelectedItem(
+        filteredTabs.length ? filteredTabs[filteredTabs.length - 1] : null
+      );
     }
   };
 
@@ -89,7 +98,8 @@ export default function PageLayout() {
                 onClick={() => setSelectedItem(tab)}
                 style={{
                   cursor: "pointer",
-                  backgroundColor: selectedItem === tab ? "#020817" : "transparent",
+                  backgroundColor:
+                    selectedItem === tab ? "#020817" : "transparent",
                   display: "flex",
                   alignItems: "center",
                   gap: "6px",
@@ -126,10 +136,13 @@ export default function PageLayout() {
               </div>
             ))}
           </div>
-          <AppSidebar items={aboutSidebarItems} onSelectItem={handleSelectItem} />
+          <AppSidebar
+            items={aboutSidebarItems}
+            onSelectItem={handleSelectItem}
+          />
         </div>
 
-        <div className="ax" style={{ position: "relative" }}>
+        <div className="ax" >
           <div className="bread">
             <Breadcrumb>
               <BreadcrumbList>

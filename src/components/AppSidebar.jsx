@@ -100,7 +100,7 @@ function RecursiveMenu({
                         display: "flex",
                         flexDirection: "column",
                         gap: "0px",
-                        paddingTop: "6px",
+                        // paddingTop: "6px",
                       }}
                     >
                       <RecursiveMenu
@@ -198,52 +198,65 @@ export function AppSidebar({ items, onSelectItem }) {
   return (
     <SidebarProvider>
       <Sidebar className="dad">
-        <SidebarContent className="second">
-          <SidebarGroup>
-            <SidebarGroupLabel
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                padding: "15px 15px 0 15px",
-              }}
-            >
-              <div>
-                <h2 className="app_label">File Explorer</h2>
-              </div>
-              <div
-                style={{ display: "flex", alignItems: "center", gap: "10px" }}
-              >
-                <div
-                  style={{ cursor: "pointer" }}
-                  onClick={opener}
-                  title="Refresh Explorer"
+        <SidebarContent>
+          <div className="second">
+            <SidebarGroup>
+              <div className="tops">
+                <SidebarGroupLabel
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    position: "sticky",
+                    top: "0",
+                    background: "020817",
+                    zIndex: "1000",
+                    width: "100%",
+                    padding: "15px 10px 0 18px",
+                  }}
                 >
-                  <Refresh className="nedda" style={{ fill: "#94a3b8" }} />
-                </div>
-                <div
-                  style={{ cursor: "pointer" }}
-                  onClick={collapseAll}
-                  title="Collapse Folders in Explorer"
-                >
-                  <Colaba className="nedda" style={{ fill: "#94a3b8" }} />
-                </div>
+                  <div>
+                    <h2 className="app_label">File Explorer</h2>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px",
+                    }}
+                  >
+                    <div
+                      style={{ cursor: "pointer" }}
+                      onClick={opener}
+                      title="Refresh Explorer"
+                    >
+                      <Refresh className="nedda" style={{ fill: "#94a3b8" }} />
+                    </div>
+                    <div
+                      style={{ cursor: "pointer" }}
+                      onClick={collapseAll}
+                      title="Collapse Folders in Explorer"
+                    >
+                      <Colaba className="nedda" style={{ fill: "#94a3b8" }} />
+                    </div>
+                  </div>
+                </SidebarGroupLabel>
+                <div className="lino"></div>
               </div>
-            </SidebarGroupLabel>
 
-            <div className="lino"></div>
-            <SidebarGroupContent className="">
-              <SidebarMenu>
-                <RecursiveMenu
-                  items={items}
-                  onSelectItem={onSelectItem}
-                  activeSubItem={activeSubItem}
-                  setActiveSubItem={setActiveSubItem}
-                  openMenus={openMenus}
-                  toggleMenu={toggleMenu}
-                />
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
+              <SidebarGroupContent className="sxa">
+                <SidebarMenu>
+                  <RecursiveMenu
+                    items={items}
+                    onSelectItem={onSelectItem}
+                    activeSubItem={activeSubItem}
+                    setActiveSubItem={setActiveSubItem}
+                    openMenus={openMenus}
+                    toggleMenu={toggleMenu}
+                  />
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          </div>
         </SidebarContent>
       </Sidebar>
     </SidebarProvider>
