@@ -171,7 +171,9 @@
   /* padding:0px 20px; */
 }
 .nedda{
-width: 10px;
+  font-weight: bold;
+  font-family: "fira";
+width: 14px;
 }
 .app_label {
   /* border: 1px solid #1c2538; */
