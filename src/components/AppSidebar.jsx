@@ -26,6 +26,9 @@ import {
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
+import Colaba from "../assets//coll.svg?react";
+import Refresh from "../assets//refresh.svg?react";
+
 import {
   Collapsible,
   CollapsibleTrigger,
@@ -104,14 +107,57 @@ export function AppSidebar({ onSelectItem }) {
       [title]: !prev[title],
     }));
   };
+  const collapseAll = () => {
+    const allClosed = Object.keys(openMenus).reduce((acc, key) => {
+      acc[key] = false;
+      return acc;
+    }, {});
+    setOpenMenus(allClosed);
+  };
 
+  const opener = () => {
+    const allOpened = Object.keys(openMenus).reduce((acc, key) => {
+      acc[key] = true;
+      return acc;
+    }, {});
+    setOpenMenus(allOpened);
+  };
   return (
     <SidebarProvider>
+      {/* <col style={{ fill: "#94A3B8" }} className="dan" /> */}
       <Sidebar className="dad">
         <SidebarContent className="second">
           <SidebarGroup>
-            <SidebarGroupLabel className="">
-              <h2 className="app_label">File Explorer</h2>
+            <SidebarGroupLabel
+              className=""
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                padding: "15px 15px 0 15px",
+              }}
+            >
+              <div>
+                <h2 className="app_label">File Explorer</h2>
+              </div>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "10px" }}
+              >
+                <div
+                  style={{ cursor: "pointer" }}
+                  onClick={opener} // Trigger collapse all on icon click
+                  title="Collapse All"
+                >
+                  <Refresh className="nedda" style={{ fill: "#94a3b8" }} />
+                </div>
+
+                <div
+                  style={{ cursor: "pointer" }}
+                  onClick={collapseAll} // Trigger collapse all on icon click
+                  title="Collapse All"
+                >
+                  <Colaba className="nedda" style={{ fill: "#94a3b8" }} />
+                </div>
+              </div>
             </SidebarGroupLabel>
 
             <div className="lino"></div>

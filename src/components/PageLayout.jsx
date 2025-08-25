@@ -24,6 +24,8 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import Backend from "@/pages/about/Backend";
+import Projects from "@/pages/about/Projects";
 
 const codeString = `// No tab currently open
 
@@ -43,6 +45,9 @@ const pageNames = {
   education: "Education",
   others: "Others",
   frontend: "Frontend",
+
+  backend: "Backend",
+  projects: "Projects",
 };
 
 export default function PageLayout() {
@@ -56,6 +61,8 @@ export default function PageLayout() {
     education: <Education />,
     others: <Others />,
     frontend: <Frontend />,
+    backend: <Backend />,
+    projects: <Projects />,
   };
 
   const handleSelectItem = (item) => {
@@ -104,6 +111,7 @@ export default function PageLayout() {
                   cursor: "pointer",
                   backgroundColor:
                     selectedItem === tab ? "#020817" : "transparent",
+
                   display: "flex",
                   alignItems: "center",
                   gap: "6px",
@@ -114,10 +122,19 @@ export default function PageLayout() {
                   className="name"
                   style={{
                     margin: 0,
-                    color: selectedItem === tab ? "white" : "#ccc",
+                    color: selectedItem === tab ? "white" : "#94a3b8",
                   }}
                 >
-                  {tab}.json
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px",
+                    }}
+                  >
+                    <Braces color="#fcd34d" size={10} />
+                    <h2 className="malx">{tab}.json</h2>
+                  </div>
                 </h2>
                 <div className="rop" onClick={(e) => closeTab(tab, e)}>
                   <X

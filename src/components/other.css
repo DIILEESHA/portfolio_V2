@@ -13,6 +13,8 @@
   display: flex;
   z-index: 1000;
   font-family: "fira";
+
+  overflow-x: scroll;
   gap: 10px;
   font-weight: 400;
   width: 100%;
@@ -20,6 +22,28 @@
   align-items: center;
   color: #fff;
   border: 1px solid #1c2538;
+}
+
+/* WebKit browsers */
+.content_area::-webkit-scrollbar {
+  width: 1px;
+  height: 1px;
+  border-radius: 4px;
+}
+
+.content_area::-webkit-scrollbar-thumb {
+  background-color: #4caf50; /* Thumb color */
+  border-radius: 4px;
+  border: 2px solid #181c23; /* Space around thumb */
+}
+
+.content_area::-webkit-scrollbar-thumb:hover {
+  background-color: #81c784; /* Thumb hover color */
+}
+
+/* Optional scrollbar corner (bottom-right) */
+.content_area::-webkit-scrollbar-corner {
+  background-color: #181c23;
 }
 
 .name {
