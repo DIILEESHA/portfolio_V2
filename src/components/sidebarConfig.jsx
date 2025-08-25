@@ -26,28 +26,6 @@ export const aboutSidebarItems = [
           { title: "interest.json", icon: Heart, color: "#94a3b8" },
           { title: "education.json", icon: GraduationCap, color: "#00d5be" },
         ],
-      },      {
-        title: "personal-info",
-        icon: User,
-        color: "#a855f7",
-        subItems: [
-          { title: "bio.json", icon: User, color: "#a855f7" },
-          { title: "experience.json", icon: BriefcaseBusiness, color: "#60a5fa" },
-          { title: "projects.json", icon: FolderKanban, color: "#ffbd2e" },
-          { title: "interest.json", icon: Heart, color: "#94a3b8" },
-          { title: "education.json", icon: GraduationCap, color: "#00d5be" },
-        ],
-      },      {
-        title: "personal-info",
-        icon: User,
-        color: "#a855f7",
-        subItems: [
-          { title: "bio.json", icon: User, color: "#a855f7" },
-          { title: "experience.json", icon: BriefcaseBusiness, color: "#60a5fa" },
-          { title: "projects.json", icon: FolderKanban, color: "#ffbd2e" },
-          { title: "interest.json", icon: Heart, color: "#94a3b8" },
-          { title: "education.json", icon: GraduationCap, color: "#00d5be" },
-        ],
       },
       {
         title: "tech-stack",
