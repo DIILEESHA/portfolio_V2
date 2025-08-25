@@ -1,26 +1,32 @@
-// PageLayout.jsx
 import { useState } from "react";
 import { AppSidebar } from "./AppSidebar";
 import Footer from "./footer/Footer";
 import Nav from "./nav/Nav";
 import "./other.css";
-
 import Bio from "@/pages/about/Bio";
 import Experience from "@/pages/about/Experience";
-import Interest from "@/pages/about/Interest";
-import Education from "@/pages/about/Education";
-import Others from "@/pages/about/Others";
-import Frontend from "@/pages/about/Frontend";
-import Backend from "@/pages/about/Backend";
-import Projects from "@/pages/about/Projects";
 
 import { X, MessageCircleWarning } from "lucide-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { motion } from "framer-motion";
+import Interest from "@/pages/about/Interest";
+import Education from "@/pages/about/Education";
+import Others from "@/pages/about/Others";
+import Frontend from "@/pages/about/Frontend";
 import { Braces } from "lucide-react";
-
 import { aboutSidebarItems } from "./sidebarConfig";
+
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import Backend from "@/pages/about/Backend";
+import Projects from "@/pages/about/Projects";
 
 const codeString = `// No tab currently open
 
@@ -32,7 +38,7 @@ console.log("⌨️ Start by clicking a file on the sidebar!");
 //  - Close this message by opening a file
 `;
 
-export default function PageLayout() {
+export default function ProjectLayout() {
   const [openedTabs, setOpenedTabs] = useState(["bio"]);
   const [selectedItem, setSelectedItem] = useState("bio");
 
@@ -60,10 +66,13 @@ export default function PageLayout() {
     setOpenedTabs(filteredTabs);
 
     if (selectedItem === tab) {
-      setSelectedItem(filteredTabs.length ? filteredTabs[filteredTabs.length - 1] : null);
+      setSelectedItem(
+        filteredTabs.length ? filteredTabs[filteredTabs.length - 1] : null
+      );
     }
   };
 
+  // Animation variants for framer-motion
   const iconAnimation = {
     initial: { scale: 1 },
     animate: {
@@ -88,7 +97,9 @@ export default function PageLayout() {
                 onClick={() => setSelectedItem(tab)}
                 style={{
                   cursor: "pointer",
-                  backgroundColor: selectedItem === tab ? "#020817" : "transparent",
+                  backgroundColor:
+                    selectedItem === tab ? "#020817" : "transparent",
+
                   display: "flex",
                   alignItems: "center",
                   gap: "6px",
@@ -125,12 +136,47 @@ export default function PageLayout() {
               </div>
             ))}
           </div>
-          <AppSidebar items={aboutSidebarItems} onSelectItem={handleSelectItem} />
+          <AppSidebar
+            items={aboutSidebarItems}
+            onSelectItem={handleSelectItem}
+          />
         </div>
 
         <div className="ax" style={{ position: "relative" }}>
           <div className="bread">
-            {/* Your Breadcrumb component usage here */}
+            <Breadcrumb>
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink className="del" href="/">
+                    portfolio_folder
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink className="del">src</BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink className="del">pages</BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+
+                <BreadcrumbItem>
+                  <BreadcrumbLink className="del" href="/about">
+                    about
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage className="sasane del">
+                    <Braces color="#fcd34d" size={14} />
+                    {/* {pageNames[selectedItem] || "Page"} */}
+                    {selectedItem + ".json"}
+                  </BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+            <div className="linos"></div>
           </div>
 
           <div className="cxz">

@@ -22,7 +22,7 @@ const Nav = () => {
             <Link to="/about">_about me</Link>
           </li>
           <li className="nav_li c" onClick={playClickSound}>
-            _my projects
+            <Link to="/projects">_my projects</Link>
           </li>
           <li className="nav_li d" onClick={playClickSound}>
             _my technologies
