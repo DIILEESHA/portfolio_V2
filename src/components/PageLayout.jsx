@@ -14,11 +14,12 @@ import Frontend from "@/pages/about/Frontend";
 import Backend from "@/pages/about/Backend";
 import Projects from "@/pages/about/Projects";
 
-import { X, MessageCircleWarning } from "lucide-react";
+import { X, MessageCircleWarning, Braces } from "lucide-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { motion } from "framer-motion";
-import { Braces } from "lucide-react";
+
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
 import { aboutSidebarItems } from "./sidebarConfig";
 
@@ -130,7 +131,37 @@ export default function PageLayout() {
 
         <div className="ax" style={{ position: "relative" }}>
           <div className="bread">
-            {/* Your Breadcrumb component usage here */}
+            <Breadcrumb>
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink className="del" href="/">
+                    portfolio_folder
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink className="del">src</BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink className="del">pages</BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink className="del" href="/about">
+                    about
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage className="sasane del">
+                    <Braces color="#fcd34d" size={14} />
+                    {selectedItem + ".json"}
+                  </BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+            <div className="linos"></div>
           </div>
 
           <div className="cxz">
